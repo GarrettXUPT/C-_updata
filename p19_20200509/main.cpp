@@ -87,6 +87,14 @@ void test01() {
 		cout << "phuman实际不是一个man类型" << endl;
 	}
 	
+	try{
+		Man* manPoint = dynamic_cast<Man*>(phuman2);
+		cout << "类型转换成功" << endl;
+		manPoint->test01();
+	}catch(const std::bad_cast*){
+		cout << "phuman动态转换失败" << endl;
+	}
+
 	cout << typeid(*phuman2).name() << endl;  // class man
 	cout << typeid(q2).name() << endl;	// class man
 
