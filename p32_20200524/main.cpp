@@ -297,7 +297,7 @@ void test05() {
 
 	shared_ptr<int> p2(new int(100), lambda1);
 	shared_ptr<int> p3(new int(200), lambda2);
-	p2 = p3;  // p3先调用lambda2将自己所指向的对象进行释放，然后指向p1所指向的对象，p1引用计数加一，
+	p2 = p3;  // p3先调用lambda2将自己所指向的对象进行释放，然后指向p2所指向的对象，p2引用计数加一，
 				// 最后函数调用时，还是调用lambda1来释放p1 p2共同指向的对象
 }
 
